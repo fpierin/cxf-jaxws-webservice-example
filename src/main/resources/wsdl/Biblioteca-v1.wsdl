@@ -44,10 +44,22 @@
 			<wsdl:output message="tns:adicionarLivroResponse" name="adicionarLivroResponse" />
 		</wsdl:operation>
 	</wsdl:portType>
+
+	<wsdl:binding name="Biblioteca_v1_0_SOAP11Binding" type="tns:Biblioteca_v1_0">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http/" />
+		<wsdl:operation soapAction="" style="document">
+			<wsdl:input name="adicionarLivro">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="adicionarLivroResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
 	
 	<wsdl:service name="Biblioteca_v1_0">
-		<wsdl:port name="SOAPOverHTTP" binding="tns:Biblioteca_v1_0_SOAP11Binding">
-			<soap:adress location="http://localhost:9000/biblioteca" />
+		<wsdl:port name="SOAPOverHTTP" binding="Biblioteca_v1_0_SOAP11Binding">
+			<soap:adress location="http://localhost:8080/biblioteca" />
 		</wsdl:port>
 	</wsdl:service>
 	
