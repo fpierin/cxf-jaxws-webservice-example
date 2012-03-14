@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xsd:schema name="Biblioteca.xsd"
+	targetNamespace="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/" 
+	xlmns:xsd="http://www.w3.org/2001/XMLSchema/">
+	
+	<xsd:complexType name="Livro">
+		<xsd:sequence>
+			<xsd:element name="codigo" type="xsd:string" />
+			<xsd:element name="nome" type="xsd:string" />
+			<xsd:element name="autor" type="xsd:string" />
+			<xsd:element name="edtora" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:schema>

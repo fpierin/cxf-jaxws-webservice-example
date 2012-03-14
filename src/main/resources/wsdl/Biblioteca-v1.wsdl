@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions name="Biblioteca-v1.wsdl"
+	targetNamespace="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1/"
+	xlmns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xlmns:tns="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:v1_0="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1.0/">
+	
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1.0/" 
+			xlmns:xsd="http://www.w3.org/2001/XMLSchema/"
+			xlmns:bib="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/">
+			<xsd:import namespace="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/" schemaLocation="../schemas/Livro.xsd" />
+			
+			<xsd:element name="adicionarLivro">
+				<complexType>
+					<sequence>
+						<element name="livro" type="bib:Livro">
+					</sequence>
+				</complexType>
+			</xsd:element>
+			<xsd:element name="adicionarLivroResponse">
+				<complexType>
+					<sequence>
+						<element name="codigo" type="xsd:string">
+					</sequence>
+				</complexType>
+			</xsd:element>
+						
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="adicionarLivro">
+		<wsdl:part name="parameters" element="v1_0:adicionarLivro"/>
+	</wsdl:message>
+	
+	<wsdl:message name="adicionarLivroResponse">
+		<wsdl:part name="parameters" element="v1_0:adicionarLivroResponse"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="Biblioteca_v1_0">
+		<wsdl:operation name="adicionarLivro">
+			<wsdl:input message="tns:adicionarLivro" name="adicionarLivro" />
+			<wsdl:output message="tns:adicionarLivroResponse" name="adicionarLivroResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:service name="Biblioteca_v1_0">
+		<wsdl:port name="SOAPOverHTTP" binding="tns:Biblioteca_v1_0_SOAP11Binding">
+			<soap:adress location="http://localhost:9000/biblioteca" />
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>
