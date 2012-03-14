@@ -1,66 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions name="Biblioteca-v1.wsdl"
 	targetNamespace="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1/"
-	xlmns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xlmns:tns="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1/"
 	xmlns:v1_0="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1.0/">
-	
+
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://oreboladodeturing.wordpress.com/wsdl/Biblioteca-v1.0/" 
-			xlmns:xsd="http://www.w3.org/2001/XMLSchema/"
-			xlmns:bib="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/">
-			<xsd:import namespace="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/" schemaLocation="../schemas/Livro.xsd" />
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:bib="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/">
+
+			<xsd:import namespace="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/"  
+				schemaLocation="../schemas/Livro.xsd" />
 			
 			<xsd:element name="adicionarLivro">
-				<complexType>
-					<sequence>
-						<element name="livro" type="bib:Livro">
-					</sequence>
-				</complexType>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="adicionarLivro" type="bib:Livro"  />
+					</xsd:sequence>
+				</xsd:complexType>
 			</xsd:element>
+
 			<xsd:element name="adicionarLivroResponse">
-				<complexType>
-					<sequence>
-						<element name="codigo" type="xsd:string">
-					</sequence>
-				</complexType>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="adicionarLivroResponse" type="xsd:string"  />
+					</xsd:sequence>
+				</xsd:complexType>
 			</xsd:element>
-						
+
 		</xsd:schema>
 	</wsdl:types>
-	
+
 	<wsdl:message name="adicionarLivro">
-		<wsdl:part name="parameters" element="v1_0:adicionarLivro"/>
+		<wsdl:part element="v1_0:adicionarLivro" name="parameters" />
 	</wsdl:message>
-	
+
 	<wsdl:message name="adicionarLivroResponse">
-		<wsdl:part name="parameters" element="v1_0:adicionarLivroResponse"/>
+		<wsdl:part element="v1_0:adicionarLivroResponse" name="parameters" />
 	</wsdl:message>
-	
+
 	<wsdl:portType name="Biblioteca_v1_0">
 		<wsdl:operation name="adicionarLivro">
 			<wsdl:input message="tns:adicionarLivro" name="adicionarLivro" />
-			<wsdl:output message="tns:adicionarLivroResponse" name="adicionarLivroResponse" />
+			<wsdl:output message="tns:adicionarLivroResponse" name="adicionarLivroResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 
-	<wsdl:binding name="Biblioteca_v1_0_SOAP11Binding" type="tns:Biblioteca_v1_0">
-		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http/" />
-		<wsdl:operation soapAction="" style="document">
-			<wsdl:input name="adicionarLivro">
-				<soap:body use="literal" />
-			</wsdl:input>
-			<wsdl:output name="adicionarLivroResponse">
-				<soap:body use="literal" />
-			</wsdl:output>
-		</wsdl:operation>
-	</wsdl:binding>
-	
-	<wsdl:service name="Biblioteca_v1_0">
-		<wsdl:port name="SOAPOverHTTP" binding="Biblioteca_v1_0_SOAP11Binding">
-			<soap:adress location="http://localhost:8080/biblioteca" />
+    <wsdl:binding name="Biblioteca_v1_0_SOAP11Binding" type="tns:Biblioteca_v1_0">
+    	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    	<wsdl:operation name="adicionarLivro">
+    		<soap:operation soapAction="" />
+    		<wsdl:input name="adicionarLivro">
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output name="adicionarLivroResponse">
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    </wsdl:binding>
+    
+    <wsdl:service name="Biblioteca_v1_0">
+		<wsdl:port binding="tns:Biblioteca_v1_0_SOAP11Binding" name="SOAPOverHTTP">
+			<soap:address location="http://localhost:8080/biblioteca/" />
 		</wsdl:port>
 	</wsdl:service>
-	
+
 </wsdl:definitions>

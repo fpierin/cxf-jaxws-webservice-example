@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<xsd:schema name="Biblioteca.xsd"
+<xsd:schema name="Biblioteca.xsd" elementFormDefault="qualified"
 	targetNamespace="http://oreboladodeturing.wordpress.com/xsd/2012/03/Biblioteca/" 
 	xlmns:xsd="http://www.w3.org/2001/XMLSchema/">
 	
 	<xsd:complexType name="Livro">
 		<xsd:sequence>
-			<xsd:element name="codigo" type="xsd:string" />
-			<xsd:element name="nome" type="xsd:string" />
-			<xsd:element name="autor" type="xsd:string" />
-			<xsd:element name="edtora" type="xsd:string" />
+			<xsd:element name="codigo" type="xsd:string"  maxOccurs="1" minOccurs="1" nillable="false" />
+			<xsd:element name="nome" type="xsd:string" maxOccurs="1" minOccurs="1" nillable="false" />
+			<xsd:element name="autor" type="xsd:string" maxOccurs="1" minOccurs="1" nillable="false" />
+			<xsd:element name="edtora" type="xsd:string" maxOccurs="1" minOccurs="1" nillable="false" />
 		</xsd:sequence>
 	</xsd:complexType>
 	
