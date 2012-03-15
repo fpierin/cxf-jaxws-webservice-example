@@ -1,43 +1,73 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.wordpress.oreboladodeturing</groupId>
-  <artifactId>cxf-jaxws-webservice-example</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>com.wordpress.oreboladodeturing</groupId>
+	<artifactId>cxf-jaxws-webservice-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>cxf-jaxws-webservice-example</name>
+	<url>http://oreboladodeturing.wordpress.com</url>
+	<description>O projeto é um exemplo de implementação de webservice usando JAX-WS e o Apache CXF.</description>
 
-  <name>cxf-jaxws-webservice-example</name>
-  <url>http://oreboladodeturing.wordpress.com</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cxf.version>2.2.3</cxf.version>
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+	</properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cxf.version>2.2.3</cxf.version>
-  </properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
 
-  <dependencies>
-  	<dependency>
-  		<groupId>org.apache.cxf</groupId>
-  		<artifactId>cxf-rt-frontend-jaxws</artifactId>
-  		<version>${cxf.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.apache.cxf</groupId>
-  		<artifactId>cxf-rt-transports-http</artifactId>
-  		<version>${cxf.version}</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.apache.cxf</groupId>
-  		<artifactId>cxf-rt-transports-http-jetty</artifactId>
-  		<version>${cxf.version}</version>
-  	</dependency>
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <description>O projeto é um exemplo de implementação de webservice usando JAX-WS e o Apache CXF.</description>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<packageName>com.wordpress.oreboladodeturing.ws.biblioteca</packageName>
+					<schemaDirectory>src/main/resources</schemaDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerVersion>1.6</compilerVersion>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
