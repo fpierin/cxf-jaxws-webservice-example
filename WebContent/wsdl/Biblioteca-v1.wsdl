@@ -53,7 +53,7 @@
   </wsdl:binding>
   <wsdl:service name="Biblioteca_v1_0">
     <wsdl:port name="SOAPOverHTTP" binding="tns:Biblioteca_v1_0_SOAP11Binding">
-      <soap:address location="http://localhost:8080/cxf-jaxws-webservice-example/services/SOAPOverHTTP"/>
+      <soap:address location="http://localhost:6001/cxf-jaxws-webservice-example/services/biblioteca"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
