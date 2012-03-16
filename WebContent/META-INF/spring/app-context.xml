@@ -11,27 +11,11 @@
         <description>Example configuration to get you started.</description>
         <context:component-scan base-package="com.wordpress.oreboladodeturing" />
 
-
-<!--         <jdbc:embedded-database id="ds"> -->
-<!--                 <jdbc:script location="classpath:teste.ddl" /> -->
-<!--                 <jdbc:script location="classpath:insert.sql" /> -->
-<!--         </jdbc:embedded-database> -->
-
-<!--         <bean id="central" class="br.com.telefonica.sigres.rtb.central.dao.Central"> -->
-<!--                 <property name="dataSource" ref="ds" /> -->
-<!--         </bean> -->
-
-<!--         <bean id="centralBo" -->
-<!--                 class="br.com.telefonica.sigres.rtb.central.ws.DbConsultaCentral"> -->
-<!--                 <property name="dao" ref="central" /> -->
-<!--         </bean> -->
-
-<!--         <bean id="ws" class="br.com.telefonica.sigres.rtb.central.ws.CentralWS"> -->
+        <bean id="ws" class="com.wordpress.oreboladodeturing.wsdl.biblioteca_v1.BibliotecaV10Impl">
 <!--                 <property name="bo" ref="centralBo"></property> -->
-<!--         </bean> -->
+        </bean>
         
-        <jaxws:endpoint id="biblioteca" address="/biblioteca" 
-        	implementor="com.wordpress.oreboladodeturing.wsdl.biblioteca_v1.BibliotecaV10Impl" />
+        <jaxws:endpoint id="biblioteca"  implementor="#ws"  address="http://localhost:6001/cxf-jaxws-webservice-example/services/biblioteca"/>
         
 		<cache:annotation-driven/>
 
