@@ -10,9 +10,13 @@
     <import resource="classpath:META-INF/cxf/cxf.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+    
+    <context:component-scan base-package="com.wordpress.oreboladodeturing.webservices" />
    
     <!-- Spring manage ServiceBean -->
-    <bean id="bibliotecaV10" class="com.wordpress.oreboladodeturing.wsdl.biblioteca_v1.BibliotecaV10Impl" />
+    <bean id="bibliotecaV10" class="com.wordpress.oreboladodeturing.wsdl.biblioteca_v1.BibliotecaV10Impl">
+    	<constructor-arg ref="bibliotecaServiceImpl" />
+    </bean>
  
     <!-- JAX-WS Service Endpoint -->    
     <jaxws:endpoint id="bibliotecaV10Service" implementor="#bibliotecaV10" address="/biblioteca" />

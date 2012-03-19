@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" 
-	xmlns:javaee="http://java.sun.com/xml/ns/javaee" 
-	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
-  <javaee:display-name>CXF Example Webservice</javaee:display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>CXF Example Webservice</display-name>
   <listener>
-    <javaee:listener-class>org.springframework.web.context.ContextLoaderListener</javaee:listener-class>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <context-param>
-    <javaee:param-name>contextConfigLocation</javaee:param-name>
-    <javaee:param-value>classpath:application-context.xml</javaee:param-value>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:application-context.xml</param-value>
   </context-param>
   <servlet>
     <servlet-name>CXFServlet</servlet-name>

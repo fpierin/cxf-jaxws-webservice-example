@@ -1,6 +1,7 @@
 
 package com.wordpress.oreboladodeturing.wsdl.biblioteca_v1;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -32,9 +33,11 @@ import javax.xml.bind.annotation.XmlType;
     "adicionarLivroResponse"
 })
 @XmlRootElement(name = "adicionarLivroResponse")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
 public class AdicionarLivroResponse {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     protected String adicionarLivroResponse;
 
     /**
@@ -45,6 +48,7 @@ public class AdicionarLivroResponse {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public String getAdicionarLivroResponse() {
         return adicionarLivroResponse;
     }
@@ -57,6 +61,7 @@ public class AdicionarLivroResponse {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public void setAdicionarLivroResponse(String value) {
         this.adicionarLivroResponse = value;
     }

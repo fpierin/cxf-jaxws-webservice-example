@@ -30,19 +30,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdicionarLivro }
-     * 
-     */
-    public AdicionarLivro createAdicionarLivro() {
-        return new AdicionarLivro();
-    }
-
-    /**
      * Create an instance of {@link AdicionarLivroResponse }
      * 
      */
     public AdicionarLivroResponse createAdicionarLivroResponse() {
         return new AdicionarLivroResponse();
+    }
+
+    /**
+     * Create an instance of {@link AdicionarLivro }
+     * 
+     */
+    public AdicionarLivro createAdicionarLivro() {
+        return new AdicionarLivro();
     }
 
 }

@@ -1,6 +1,7 @@
 
 package com.wordpress.oreboladodeturing.xsd._2012._03.biblioteca;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,15 +37,20 @@ import javax.xml.bind.annotation.XmlType;
     "autor",
     "edtora"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
 public class Livro {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     protected String codigo;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     protected String nome;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     protected String autor;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     protected String edtora;
 
     /**
@@ -55,6 +61,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public String getCodigo() {
         return codigo;
     }
@@ -67,6 +74,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public void setCodigo(String value) {
         this.codigo = value;
     }
@@ -79,6 +87,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public String getNome() {
         return nome;
     }
@@ -91,6 +100,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public void setNome(String value) {
         this.nome = value;
     }
@@ -103,6 +113,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public String getAutor() {
         return autor;
     }
@@ -115,6 +126,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public void setAutor(String value) {
         this.autor = value;
     }
@@ -127,6 +139,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public String getEdtora() {
         return edtora;
     }
@@ -139,6 +152,7 @@ public class Livro {
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2012-03-18T04:53:56-03:00", comments = "JAXB RI vhudson-jaxb-ri-2.1-2")
     public void setEdtora(String value) {
         this.edtora = value;
     }
